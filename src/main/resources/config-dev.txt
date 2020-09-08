@@ -1,0 +1,6 @@
+# config
+jdbcUrl = jdbc:mysql://localhost/ldjcdd?characterEncoding=utf8&useSSL=false&zeroDateTimeBehavior=convertToNull
+user = root
+password = root
+devMode = false
+printer = HP LaserJet 1020

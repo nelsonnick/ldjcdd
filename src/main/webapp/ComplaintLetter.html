@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>槐荫区劳动监察大队电子投诉书</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+        <h3 class="text-center"><strong>槐荫区劳动监察大队电子投诉书</strong></h3>
+        <p class="text-center text-danger"><strong>以下内容均为必填项，请核实无误后再提交！</strong></p>
+        <form class="form-inline" id="ComplaintForm" method="post" action="/SaveComplaintLetter">
+            <h4 class="text-primary"><strong>投诉人基本信息</strong></h4>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-addon">人员姓名</div>
+                    <input type="text" class="form-control" id="PersonName" name="ComplaintLetter.PersonName" placeholder="请输入投诉人姓名" maxlength="50">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-addon">证件号码</div>
+                    <input type="text" class="form-control" id="PersonNumber" name="ComplaintLetter.PersonNumber" placeholder="请输入投诉人身份证号码"
+                           maxlength="18">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-addon">联系电话</div>
+                    <input type="tel" class="form-control" id="PersonPhone" name="ComplaintLetter.PersonPhone" placeholder="请输入投诉人联系电话"
+                           maxlength="11">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-addon">家庭住址</div>
+                    <input type="text" class="form-control" id="PersonAddress" name="ComplaintLetter.PersonAddress" placeholder="请输入投诉人家庭住址" maxlength="400">
+                </div>
+            </div>
+            <h4 class="text-primary"><strong>投诉单位基本信息</strong></h4>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-addon">单位名称</div>
+                    <input type="text" class="form-control" id="CompanyName" name="ComplaintLetter.CompanyName" placeholder="请输入投诉单位名称" maxlength="100">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-addon">单位地址</div>
+                    <input type="text" class="form-control" id="CompanyAddress" name="ComplaintLetter.CompanyAddress" placeholder="请输入投诉单位地址" maxlength="400">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-addon">法人姓名</div>
+                    <input type="text" class="form-control" id="LegalName" name="ComplaintLetter.LegalName" placeholder="请输入投诉单位法人或者负责人姓名" maxlength="50">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-addon">具体职务</div>
+                    <input type="text" class="form-control" id="LegalPosition" name="ComplaintLetter.LegalPosition" placeholder="请输入投诉单位负责人职务" maxlength="100">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-addon">联系电话</div>
+                    <input type="tel" class="form-control" id="LegalPhone" name="ComplaintLetter.LegalPhone" placeholder="请输入投诉单位法人或者负责人联系电话"
+                           maxlength="11">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-addon">人事姓名</div>
+                    <input type="text" class="form-control" id="PersonnelName" name="ComplaintLetter.PersonnelName" placeholder="请输入投诉单位人事负责人姓名" maxlength="50">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-addon">联系电话</div>
+                    <input type="tel" class="form-control" id="PersonnelPhone" name="ComplaintLetter.PersonnelPhone" placeholder="请输入投诉单位人事负责人联系电话"
+                           maxlength="11">
+                </div>
+            </div>
+            <h4 class="text-primary"><strong>请求事项</strong></h4>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <textarea class="form-control" rows="6" id="AppealMatter" name="ComplaintLetter.AppealMatter"
+                              placeholder="请输入请求事项。多个事项需换行输入。" maxlength="2500"></textarea>
+                </div>
+            </div>
+            <h4 class="text-primary"><strong>事实和理由（附相关依据）</strong></h4>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <textarea class="form-control" rows="6" id="FactReason" name="ComplaintLetter.CompanyReason"
+                              placeholder="请输入事实和理由。多个事实和理由需换行输入。" maxlength="2500"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-primary btn-lg btn-block" onclick="beforeSubmit()">提交</button>
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript">
+        let ComplaintForm = document.getElementById('ComplaintForm');
+        function beforeSubmit() {
+            let PersonName = document.getElementById('PersonName').value;
+            let PersonNumber = document.getElementById('PersonNumber').value;
+            let PersonPhone = document.getElementById('PersonPhone').value;
+            let PersonAddress = document.getElementById('PersonAddress').value;
+            let CompanyName = document.getElementById('CompanyName').value;
+            let CompanyAddress = document.getElementById('CompanyAddress').value;
+            let LegalName = document.getElementById('LegalName').value;
+            let LegalPosition = document.getElementById('LegalPosition').value;
+            let LegalPhone = document.getElementById('LegalPhone').value;
+            let PersonnelName = document.getElementById('PersonnelName').value;
+            let PersonnelPhone = document.getElementById('PersonnelPhone').value;
+            let AppealMatter = document.getElementById('AppealMatter').value;
+            let FactReason = document.getElementById('FactReason').value;
+            ComplaintForm.submit();
+            // if (PersonName.length < 1 || PersonNumber.length < 1
+            //     || PersonPhone.length < 1 || PersonAddress.length < 1
+            //     || CompanyName.length < 1 || CompanyAddress.length < 1
+            //     || LegalName.length < 1 || LegalPosition.length < 1
+            //     || LegalPhone.length < 1 || PersonnelName.length < 1
+            //     || PersonnelPhone.length < 1 || AppealMatter.length < 1
+            //     || FactReason.length < 1) {
+            //     alert('存在空白信息，请完善后再提交！');
+            // } else {
+            //     if (PersonNumber.length !== 18){
+            //         alert('身份证号码应为18位，请修改后重新提交！');
+            //     }else{
+            //         ComplaintForm.submit();
+            //     }
+            // }
+        }
+    </script>
+</body>
+</html>
