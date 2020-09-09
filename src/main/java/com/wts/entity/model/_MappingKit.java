@@ -16,7 +16,8 @@ import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 public class _MappingKit {
 	
 	public static void mapping(ActiveRecordPlugin arp) {
-		arp.addMapping("complainletter", "id", Complainletter.class);
+		arp.addMapping("complaintletter", "id", Complaintletter.class);
+		arp.addMapping("filingcase", "id", Filingcase.class);
 	}
 }
 

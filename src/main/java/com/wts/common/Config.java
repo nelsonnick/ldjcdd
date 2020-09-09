@@ -14,6 +14,7 @@ import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.server.undertow.UndertowServer;
 import com.jfinal.template.Engine;
 import com.wts.controller.*;
+import com.wts.entity.model._MappingKit;
 
 
 /**
@@ -67,6 +68,8 @@ public class Config extends JFinalConfig {
 	 */
 	public void configRoute(Routes me) {
 		me.add("/", MainController.class);
+		me.add("/c", ComplaintLetterController.class);
+		me.add("/f", FilingCaseController.class);
 	}
 
 	public void configEngine(Engine me) {
@@ -85,7 +88,7 @@ public class Config extends JFinalConfig {
 //		 配置ActiveRecord插件
 		ActiveRecordPlugin arp = new ActiveRecordPlugin(druidPlugin);
 		// 所有映射在 MappingKit 中自动化搞定
-//		_MappingKit.mapping(arp);
+		_MappingKit.mapping(arp);
 		me.add(arp);
 		// 配置任务调度插件
 		Cron4jPlugin cp = new Cron4jPlugin();

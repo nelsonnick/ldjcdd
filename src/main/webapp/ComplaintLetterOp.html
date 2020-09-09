@@ -2,138 +2,139 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>槐荫区劳动监察大队电子投诉书</title>
+    <title>槐荫区劳动监察大队电子投诉书处理</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 <div class="container-fluid">
     <h3 class="text-center"><strong>槐荫区劳动监察大队电子投诉书</strong></h3>
-    <p class="text-center text-danger"><strong>以下内容均为必填项，请核实无误后再提交！</strong></p>
-    <form class="form-inline" id="ComplaintForm" method="post" action="/complaintletter/save">
+    <p class="text-center text-danger"><strong>请核实无误后再处理！</strong></p>
+    <form class="form-inline" id="ComplaintForm" method="post">
+        <input type="hidden" name="id" value="#(id??)" />
         <h4 class="text-primary"><strong>投诉人基本信息</strong></h4>
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon">人员姓名</div>
-                <input type="text" class="form-control" id="PersonName" name="PersonName" placeholder="请输入投诉人姓名" maxlength="50">
+                <input type="text" class="form-control" id="PersonName" name="PersonName" placeholder="请输入投诉人姓名" maxlength="50" value="#(PersonName??)" disabled>
             </div>
         </div>
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon">证件号码</div>
                 <input type="text" class="form-control" id="PersonNumber" name="PersonNumber" placeholder="请输入投诉人身份证号码"
-                       maxlength="18">
+                       maxlength="18" value="#(PersonNumber??)" disabled>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-addon">当前年龄</div>
+                <input type="text" class="form-control" id="PersonAge" name="PersonAge"
+                       maxlength="18" value="#(PersonAge??)" disabled>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-addon">人员性别</div>
+                <input type="text" class="form-control" id="PersonSex" name="PersonSex"
+                       maxlength="18" value="#(PersonSex??)" disabled>
             </div>
         </div>
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon">联系电话</div>
                 <input type="tel" class="form-control" id="PersonPhone" name="PersonPhone" placeholder="请输入投诉人联系电话"
-                       maxlength="11">
+                       maxlength="11" value="#(PersonPhone??)" disabled>
             </div>
         </div>
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon">家庭住址</div>
-                <input type="text" class="form-control" id="PersonAddress" name="PersonAddress" placeholder="请输入投诉人家庭住址" maxlength="400">
+                <input type="text" class="form-control" id="PersonAddress" name="PersonAddress" placeholder="请输入投诉人家庭住址" maxlength="400" value="#(PersonAddress??)" disabled>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-addon">投诉时间</div>
+                <input type="text" class="form-control" id="ComplaintDate" name="ComplaintDate" maxlength="400" value="#(ComplaintDate??)" disabled>
             </div>
         </div>
         <h4 class="text-primary"><strong>投诉单位基本信息</strong></h4>
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon">单位名称</div>
-                <input type="text" class="form-control" id="CompanyName" name="CompanyName" placeholder="请输入投诉单位名称" maxlength="100">
+                <input type="text" class="form-control" id="CompanyName" name="CompanyName" placeholder="请输入投诉单位名称" maxlength="100" value="#(CompanyName??)" disabled>
             </div>
         </div>
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon">单位地址</div>
-                <input type="text" class="form-control" id="CompanyAddress" name="CompanyAddress" placeholder="请输入投诉单位地址" maxlength="400">
+                <input type="text" class="form-control" id="CompanyAddress" name="CompanyAddress" placeholder="请输入投诉单位地址" maxlength="400" value="#(CompanyAddress??)" disabled>
             </div>
         </div>
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon">法人姓名</div>
-                <input type="text" class="form-control" id="LegalName" name="LegalName" placeholder="请输入投诉单位法人或者负责人姓名" maxlength="50">
+                <input type="text" class="form-control" id="LegalName" name="LegalName" placeholder="请输入投诉单位法人或者负责人姓名" maxlength="50" value="#(LegalName??)" disabled>
             </div>
         </div>
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon">具体职务</div>
-                <input type="text" class="form-control" id="LegalPosition" name="LegalPosition" placeholder="请输入投诉单位负责人职务" maxlength="100">
+                <input type="text" class="form-control" id="LegalPosition" name="LegalPosition" placeholder="请输入投诉单位负责人职务" maxlength="100" value="#(LegalPosition??)" disabled>
             </div>
         </div>
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon">联系电话</div>
                 <input type="tel" class="form-control" id="LegalPhone" name="LegalPhone" placeholder="请输入投诉单位法人或者负责人联系电话"
-                       maxlength="11">
+                       maxlength="11" value="#(LegalPhone??)" disabled>
             </div>
         </div>
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon">人事姓名</div>
-                <input type="text" class="form-control" id="PersonnelName" name="PersonnelName" placeholder="请输入投诉单位人事负责人姓名" maxlength="50">
+                <input type="text" class="form-control" id="PersonnelName" name="PersonnelName" placeholder="请输入投诉单位人事负责人姓名" maxlength="50" value="#(PersonnelName??)" disabled>
             </div>
         </div>
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon">联系电话</div>
                 <input type="tel" class="form-control" id="PersonnelPhone" name="PersonnelPhone" placeholder="请输入投诉单位人事负责人联系电话"
-                       maxlength="11">
+                       maxlength="11" value="#(PersonnelPhone??)" disabled>
             </div>
         </div>
         <h4 class="text-primary"><strong>请求事项</strong></h4>
         <div class="form-group">
             <div class="col-md-12">
                     <textarea class="form-control" rows="6" id="AppealMatter" name="AppealMatter"
-                              placeholder="请输入请求事项。多个事项需换行输入。" maxlength="2500"></textarea>
+                              placeholder="请输入请求事项。多个事项需换行输入。" maxlength="2500" disabled>#(AppealMatter??)</textarea>
             </div>
         </div>
         <h4 class="text-primary"><strong>事实和理由（附相关依据）</strong></h4>
         <div class="form-group">
             <div class="col-md-12">
                     <textarea class="form-control" rows="6" id="FactReason" name="FactReason"
-                              placeholder="请输入事实和理由。多个事实和理由需换行输入。" maxlength="2500"></textarea>
+                              placeholder="请输入事实和理由。多个事实和理由需换行输入。" maxlength="2500" disabled>#(FactReason??)</textarea>
             </div>
         </div>
         <div class="form-group">
-            <button type="button" class="btn btn-primary btn-lg btn-block" onclick="beforeSubmit()">提交</button>
+            <input type="submit" name="delete" class="btn btn-danger btn-lg btn-block" value="删除" onclick="delAction()"/>
+        </div>
+        <div class="form-group">
+            <input type="submit" name="save" class="btn btn-success btn-lg btn-block" value="保存并打印" onclick="saveAction()"/>
         </div>
     </form>
 </div>
 <script type="text/javascript">
     let ComplaintForm = document.getElementById('ComplaintForm');
-    function beforeSubmit() {
-        let PersonName = document.getElementById('PersonName').value;
-        let PersonNumber = document.getElementById('PersonNumber').value;
-        let PersonPhone = document.getElementById('PersonPhone').value;
-        let PersonAddress = document.getElementById('PersonAddress').value;
-        let CompanyName = document.getElementById('CompanyName').value;
-        let CompanyAddress = document.getElementById('CompanyAddress').value;
-        let LegalName = document.getElementById('LegalName').value;
-        let LegalPosition = document.getElementById('LegalPosition').value;
-        let LegalPhone = document.getElementById('LegalPhone').value;
-        let PersonnelName = document.getElementById('PersonnelName').value;
-        let PersonnelPhone = document.getElementById('PersonnelPhone').value;
-        let AppealMatter = document.getElementById('AppealMatter').value;
-        let FactReason = document.getElementById('FactReason').value;
-        // ComplaintForm.submit();
-        if (PersonName.length < 1 || PersonNumber.length < 1
-            || PersonPhone.length < 1 || PersonAddress.length < 1
-            || CompanyName.length < 1 || CompanyAddress.length < 1
-            || LegalName.length < 1 || LegalPosition.length < 1
-            || LegalPhone.length < 1 || PersonnelName.length < 1
-            || PersonnelPhone.length < 1 || AppealMatter.length < 1
-            || FactReason.length < 1) {
-            alert('存在空白信息，请完善后再提交！');
-        } else {
-            if (PersonNumber.length !== 18){
-                alert('身份证号码应为18位，请修改后重新提交！');
-            }else{
-                ComplaintForm.submit();
-            }
-        }
+    function delAction() {
+        ComplaintForm.action = "/c/delete"
+        ComplaintForm.submit();
+    }
+    function saveAction() {
+        ComplaintForm.action = "/c/next"
+        ComplaintForm.submit();
     }
 </script>
 </body>
